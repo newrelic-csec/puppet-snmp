@@ -24,3 +24,8 @@ syscontact <%= scope.lookupvar('snmp::server::contact') %>
 
 dontLogTCPWrappersConnects yes
 
+# notifications are sent to the trap daemon on <%= scope.lookupvar('snmp::server::trap2_sink') %>
+#
+trapcommunity <%= scope.lookupvar('snmp::server::trap_community') %>
+trap2sink <%= scope.lookupvar('snmp::server::trap2_sink') %>
+

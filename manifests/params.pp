@@ -11,13 +11,15 @@
 # Copyright (C) 2012 Mike Arnold, unless otherwise noted.
 #
 class snmp::params {
-  $ro_community = 'public'
-  $rw_community = 'private'
-  $ro_network   = '127.0.0.1'
-  $rw_network   = '127.0.0.1'
-  $contact      = 'Unknown'
-  $location     = 'Unknown'
-  $views        = [
+  $ro_community   = 'public'
+  $rw_community   = 'private'
+  $ro_network     = '127.0.0.1'
+  $rw_network     = '127.0.0.1'
+  $contact        = 'Unknown'
+  $location       = 'Unknown'
+  $trap_community = 'public'
+  $trap2_sink     = '127.0.0.1'
+  $views          = [
     'view    systemview    included   .1.3.6.1.2.1.1',
     'view    systemview    included   .1.3.6.1.2.1.25.1.1',
   ]

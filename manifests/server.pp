@@ -93,6 +93,8 @@ class snmp::server (
   $rw_network         = $snmp::params::rw_network,
   $contact            = $snmp::params::contact,
   $location           = $snmp::params::location,
+  $trap_community     = $snmp::params::trap_community,
+  $trap2_sink         = $snmp::params::trap2_sink,
   $views              = $snmp::params::views,
   $accesses           = $snmp::params::accesses,
   $ensure             = 'present',
