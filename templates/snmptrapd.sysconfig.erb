@@ -1,0 +1,12 @@
+###
+### File managed by Puppet
+###
+# snmptrapd command line options
+
+#For RedHat 5:
+#OPTIONS="-Lsd -p /var/run/snmptrapd.pid"
+#
+#For RedHat 6:
+#OPTIONS="-Lsd -p /var/run/snmptrapd.pid -On"
+
+OPTIONS="<% scope.lookupvar('snmp::server::sysconfig_options') %>"

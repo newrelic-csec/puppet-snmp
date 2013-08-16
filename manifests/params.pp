@@ -19,6 +19,7 @@ class snmp::params {
   $location       = 'Unknown'
   $trap_community = 'public'
   $trap2_sink     = '127.0.0.1'
+  $trapd_options  = '-Lsd -p /var/run/snmptrapd.pid'
   $views          = [
     'view    systemview    included   .1.3.6.1.2.1.1',
     'view    systemview    included   .1.3.6.1.2.1.25.1.1',
@@ -57,6 +58,12 @@ class snmp::params {
       } else {
         $trap_sysconfig    = '/etc/sysconfig/snmptrapd'
       }
+
+      #This is for compatibility with snmp trap translator
+      if $::lsbmajdistrelease > '5' {
+        $trapd_options  = '-Lsd -p /var/run/snmptrapd.pid -On'
+      }
+
     }
     'Fedora': {
       fail("Module snmp is not yet supported on ${::operatingsystem}")

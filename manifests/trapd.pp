@@ -108,11 +108,7 @@ class snmp::trapd (
     owner   => 'root',
     group   => 'root',
     path    => $snmp::params::trap_sysconfig,
-    source  => [
-      "puppet:///modules/snmp/snmptrapd.sysconfig-${::fqdn}",
-      "puppet:///modules/snmp/snmptrapd.sysconfig-${::osfamily}-${::lsbmajdistrelease}",
-      'puppet:///modules/snmp/snmptrapd.sysconfig',
-    ],
+    content => template('snmp/snmptrapd.sysconfig.erb'),
     require => Package['snmpd'],
     notify  => Service['snmptrapd'],
   }
