@@ -9,4 +9,4 @@
 #For RedHat 6:
 #OPTIONS="-Lsd -p /var/run/snmptrapd.pid -On"
 
-OPTIONS="<% scope.lookupvar('snmp::server::sysconfig_options') %>"
+OPTIONS="<% scope.lookupvar('snmp::server::trapd_options') %>"

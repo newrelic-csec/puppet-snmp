@@ -61,7 +61,10 @@ class snmp::params {
 
       #This is for compatibility with snmp trap translator
       if $::lsbmajdistrelease > '5' {
-        $trapd_options  = '-Lsd -p /var/run/snmptrapd.pid -On'
+        $trapd_options     = '-Lsd -p /var/run/snmptrapd.pid -On'
+      }
+      else {
+        $trapd_options     = '-Lsd -p /var/run/snmptrapd.pid'
       }
 
     }

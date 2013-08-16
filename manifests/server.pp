@@ -95,6 +95,7 @@ class snmp::server (
   $location           = $snmp::params::location,
   $trap_community     = $snmp::params::trap_community,
   $trap2_sink         = $snmp::params::trap2_sink,
+  $trapd_options      = $snmp::params::trapd_options,
   $views              = $snmp::params::views,
   $accesses           = $snmp::params::accesses,
   $ensure             = 'present',
