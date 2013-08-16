@@ -28,6 +28,18 @@
 #   Location of the SNMP system.
 #   Default: Unknown
 #
+# [*$trap_community*]
+#   Community that the snmptrap listens to
+#   Default: public
+#
+# [*trap2_sink*]
+#   The server to send traps to
+#   Default: 127.0.0.1
+#
+# [*trapd_options*]
+#   Options for the snmptrapd daemon
+#   Default: "-Lsd -p /var/run/snmptrapd.pid"
+#
 # [*ensure*]
 #   Ensure if present or absent.
 #   Default: present
