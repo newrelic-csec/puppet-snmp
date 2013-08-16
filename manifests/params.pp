@@ -58,15 +58,6 @@ class snmp::params {
       } else {
         $trap_sysconfig    = '/etc/sysconfig/snmptrapd'
       }
-
-      #This is for compatibility with snmp trap translator
-      if $::lsbmajdistrelease > '5' {
-        $trapd_options     = '-Lsd -p /var/run/snmptrapd.pid -On'
-      }
-      else {
-        $trapd_options     = '-Lsd -p /var/run/snmptrapd.pid'
-      }
-
     }
     'Fedora': {
       fail("Module snmp is not yet supported on ${::operatingsystem}")
