@@ -64,10 +64,10 @@ dlmod <%= mod %>
 ################################################################################
 # OTHER CONFIGURATION
 
-# notifications are sent to the trap daemon on <%= scope.lookupvar('snmp::server::trap2_sink') %>
+# notifications are sent to the trap daemon on <%= @trap2_sink %>
 #
-trapcommunity <%= scope.lookupvar('snmp::server::trap_community') %>
-trap2sink <%= scope.lookupvar('snmp::server::trap2_sink') %>
+trapcommunity <%= @trap_community %>
+trap2sink <%= @trap2_sink %>
 
 <% @snmpd_config.each do |line| -%>
 <%= line %>
