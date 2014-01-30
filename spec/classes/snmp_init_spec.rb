@@ -82,9 +82,9 @@ describe 'snmp', :type => 'class' do
           :require => 'Package[snmpd]',
           :notify  => 'Service[snmpd]'
         )}
-        it 'should contain File[snmpd.sysconfig] with contents "OPTIONS="-LS0-6d -Lf /dev/null -p /var/run/snmpd.pid""' do
+        it 'should contain File[snmpd.sysconfig] with contents "OPTIONS="-LS0-5d -Lf /dev/null -p /var/run/snmpd.pid""' do
           verify_contents(subject, 'snmpd.sysconfig', [
-            'OPTIONS="-LS0-6d -Lf /dev/null -p /var/run/snmpd.pid"',
+            'OPTIONS="-LS0-5d -Lf /dev/null -p /var/run/snmpd.pid"',
           ])
         end
         it { should contain_service('snmpd').with(

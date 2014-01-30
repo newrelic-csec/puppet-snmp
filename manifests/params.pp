@@ -231,7 +231,7 @@ class snmp::params {
       $majdistrelease = regsubst($::operatingsystemrelease,'^(\d+)\.(\d+)','\1')
       case $::operatingsystem {
         'Fedora': {
-          $snmpd_options     = '-LS0-6d'
+          $snmpd_options     = '-LS0-5d'
           $snmptrapd_options = '-Lsd'
           $sysconfig         = '/etc/sysconfig/snmpd'
           $trap_sysconfig    = '/etc/sysconfig/snmptrapd'
@@ -246,7 +246,7 @@ class snmp::params {
             $var_net_snmp     = '/var/net-snmp'
             $varnetsnmp_perms = '0700'
           } else {
-            $snmpd_options    = '-LS0-6d -Lf /dev/null -p /var/run/snmpd.pid'
+            $snmpd_options    = '-LS0-5d -Lf /dev/null -p /var/run/snmpd.pid'
             $sysconfig        = '/etc/sysconfig/snmpd'
             $trap_sysconfig   = '/etc/sysconfig/snmptrapd'
             $var_net_snmp     = '/var/lib/net-snmp'
